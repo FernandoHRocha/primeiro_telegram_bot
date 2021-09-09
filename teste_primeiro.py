@@ -1,7 +1,7 @@
 import telebot
 import json
 import urllib
-import tk
+from botoes import tk
 
 bot = telebot.TeleBot(tk.token, parse_mode=None)
 
@@ -9,7 +9,7 @@ bot = telebot.TeleBot(tk.token, parse_mode=None)
 def send_start_message(message):
 	bot.reply_to(message,   "Bom dia meu querido, como que tá esse sorriso?\n"
                             "Os meu comandos são os seguintes:\n"
-                            "/pessoas tripulantes em satélites."
+                            "/pessoas tripulantes em satélites.\n"
                             "/cotacao atual valor do par BTC-USD")
 
 @bot.message_handler(commands=['pessoas'])
