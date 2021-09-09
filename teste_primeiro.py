@@ -9,7 +9,8 @@ bot = telebot.TeleBot(tk.token, parse_mode=None)
 def send_start_message(message):
 	bot.reply_to(message,   "Bom dia meu querido, como que tá esse sorriso?\n"
                             "Os meu comandos são os seguintes:\n"
-                            "/pessoas tripulantes em satélites.")
+                            "/pessoas tripulantes em satélites."
+                            "/cotacao atual valor do par BTC-USD")
 
 @bot.message_handler(commands=['pessoas'])
 def send_people(message):
@@ -38,8 +39,7 @@ def api_tripulantes():
 
 def obter_cotacao():
     cotacao = api_cotacao()
-    print(cotacao)
-    return "Cotação atual para o par BTC-USD\n"+"Compra: US$ "+cotacao[0]+"\nVenda: US$ " +cotacao[0]
+    return "Cotação atual para o par BTC-USD\n"+"Compra: US$ "+cotacao[0]+"\nVenda: US$ " +cotacao[1]
 
 def api_cotacao():
     req = 'https://api.privatbank.ua/p24api/pubinfo?json&exchange'
