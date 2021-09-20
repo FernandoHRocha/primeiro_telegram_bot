@@ -1,8 +1,8 @@
 class Estado:
     estado = {
-        '0':'ocioso',
-        '1':'avaliando',
-        '2':'conversando'
+        0:'ocioso',
+        1:'avaliando',
+        2:'conversando'
     }
     def __init__(self,estado:int):
         self.estado = estado
